@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Space+Mono&display=swap');
+
+
+
+/* PROPIEDADES GENERALES */
+* {
+  margin: 0px;
+  padding: 0px; 
+  outline: 0;
+
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #222222;
+  padding-bottom: 5px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+
+
+/* #menu {
+	text-align: center;
+	font-size: 0.7em;
+	width: 540px;
+	margin: 20px auto;
+} */
+
+#menu {
+text-align: center;
+max-width: 1200px;
+margin: 0 auto;
+}
+
+#menu ul {
+display: flex;
+list-style-type: none;
+align-items: center;
+justify-content: center;
+}
+
+#menu ul li {
+width: 1200px;
+}
+
+#menu ul li a {
+display: flex;
+text-decoration: none;
+color: #fff;
+background-color: #222;
+border: 0;
+padding: 8px; 
+position: relative;
+/*padding: 7px 15px; */
+}
+
+#menu ul li ul li a {
+width: 160px;
+padding: 8px 8px;
+border-top-color: transparent;
+text-align: left;
+}
+
+#menu ul li ul {
+display: none;
+}
+
+/* PROPIEDADES ESPECÍFICAS */
+
+
+
+#menu ul li.nivel1 { 
+float: left;
+margin-right: 1px;
+}
+
+#menu ul li a.nivel2 {
+color: #000;
+}
+
+#menu ul li a.nivel1, #menu ul li a.nivel2 {
+display: block;
+position: relative;
+}
+
+/* PROPIEDAD HOVER */
+
+#menu ul li:hover {
+position: relative;
+}
+
+#menu ul li a:hover, #menu ul li:hover a.nivel1 {
+  color: #c0392b;
+  position: relative;
+}
+/* menu desplegable */
+ #menu ul li:hover  ul.nivel2, #menu ul li a:hover  ul.nivel2{
+display: block;
+position: absolute;left: 0px;
+}
+
+
+#menu ul li ul li a:hover {
+border-top-color: #000;
+position: relative;
+}  
+
+.nav {
+  position: fixed;
+  background-color: #222;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 7px 15px;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav a.current,
+.nav a:hover {
+  color: #c0392b;
+  font-weight: bold;
+}
+
+.nav img {
+  max-width: 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero {
+  background: url("/images/fondo/fondo.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  /*background-position: bottom center; */
+  height: 80vh;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  text-align: center;
+  position: relative;
+  margin-bottom: 20px;
+   z-index: -2; 
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+.itachi {
+  display: block;
+  width: 180vw;
+}
+
+.hero h1 {
+  font-size: 35px;
+  margin: 60px;
+
+}
+
+.hero p {
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin-left: 80px;
+  margin-right: 80px;
+  
+}
+
+
+.contenido p {
+  color: #555;
+  line-height: 30px;
+  letter-spacing: 1.2px;
+  
+}
+
+.contenido {
+  display: flex;
+  margin-left: 70px;
+  width: 90vw;
+}
+
+/* carrusel de noticias */
+
+.noticias {
+  
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; 
+  padding-bottom: 0px;
+  height: 40vh;
+  margin-top: 40px;
+  position: relative;
+
+}
+
+.panel {
+  background: url("/images/carrusel/foto2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 40vh;
+  border-radius: 50px;
+  color: #fff;
+  cursor: pointer;
+  flex: 0.5;
+  margin: 10px;
+  position: relative;
+  transition: all;
+  -webkit-transition: all 700ms ease-in;
+}
+
+/*.panel img{
+  border-radius: 20px;
+  width: 169px;
+    aspect-ratio: auto 169 / 112;
+    height: 112px;
+
+} */
+
+.panel h3 {
+  font-size: 26px;
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  margin: 0;
+  opacity: 0;
+}
+
+.panel.active p {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
+}
+
+.panel p {
+  font-size: 24px;
+  position: absolute;
+  top: 54px;
+  left: 20px;
+  margin: 0;
+  opacity: 0;
+}
+
+.panel.active {
+  flex: 5;
+}
+
+.panel.active h3 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
+} 
+
+@media (max-width: 480px) {
+  .container {
+    width: 100vw;
+  }
+
+  .panel:nth-of-type(4),
+  .panel:nth-of-type(5) {
+    display: none;
+  }
+}
